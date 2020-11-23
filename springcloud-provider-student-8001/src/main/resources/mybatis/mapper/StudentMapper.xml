@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.ljerii.springcloud.dao.StudentDao">
+
+    <insert id="addStudent" parameterType="Student">
+        insert into student (id,name,gender,age) values (#{id},#{name},#{gender},#{age});
+    </insert>
+
+    <select id="queryStudentById" resultType="com.ljerii.springcloud.entity.Student">
+        select id,name,gender,age from student where id = #{id};
+    </select>
+
+    <select id="queryAllStudent" resultType="com.ljerii.springcloud.entity.Student">
+        select * from student;
+    </select>
+</mapper>
