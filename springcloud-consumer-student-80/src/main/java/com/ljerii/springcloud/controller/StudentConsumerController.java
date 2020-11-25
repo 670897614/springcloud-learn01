@@ -20,7 +20,12 @@ public class StudentConsumerController {
     @Autowired
     private RestTemplate restTemplate;
 
-    private static final String urlPrefix="http://localhost:8001";
+    /**
+     * Ribbon 不再通过url访问服务，通过服务名访问服务“SPRINGCLOUD-PROVIDER-STUDENT”
+     * **/
+
+//    private static final String urlPrefix="http://localhost:8001";
+    private static final String urlPrefix="http://SPRINGCLOUD-PROVIDER-STUDENT";//ribbon通过服务名访问
 
     @RequestMapping("/consumer/student/add")
     @ResponseBody
